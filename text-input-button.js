@@ -75,7 +75,7 @@ class TextInputButton extends HTMLElement {
      *  attribute.
      */
     static get observedAttributes() {
-        return [];
+        return ['placeholder', 'name', 'type', 'alt'];
     };
 
     constructor() {
@@ -119,6 +119,11 @@ class TextInputButton extends HTMLElement {
      */
     attributeChangedCallback(name, oldValue, newValue) {
         // respond to a changed attribute here
+        if(oldValue === newValue) {
+            return;
+        }
+
+        this.shadowRoot.querySelector('input').setAttribute(name, newValue);
     }
 }
 
