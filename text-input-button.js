@@ -8,14 +8,20 @@ template.innerHTML = `
         :host {
             display: inline-block;
         }
+        input, button {
+            margin: 0px;
+        }
         input {
             padding: 0.5em;
-            border-radius: 3px;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
             font-size: 0.8em;
-            border: none;
-            width: calc(100% - 1em) ;
+            border: solid 1px #aaa;
+            display: block;
+            float:left;
+            
         }
-        input:focus {
+        input:focus, button {
             outline: none;
         }
         div {
@@ -32,26 +38,20 @@ template.innerHTML = `
 
         button {
             display: inline-block;
-            border-radius: 3px;
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
             padding: 0.5em 1em;
             cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             transition: all ease 0.3s;
             opacity: 1;
             -webkit-user-select: none;
             -moz-user-select: none; 
              -ms-user-select: none; 
                  user-select: none;
+            font-size: 0.8em;
+            border: solid 1px #aaa;
         }
-
-        button:hover {
-            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-        }
-
-        button:active {
-            opacity: 0.8;
-            boxshadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-        }
+        
     </style>
     <input type="text" />
     <button>
