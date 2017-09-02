@@ -1,7 +1,7 @@
 # text-input-button
 A HTML custom element implementing the `<text-input-button>` tag.
 
-![text-input-button in action](https://github.com/Kiricon/text-input-button/raw/master/screencapture.gif)
+![text-input-button in action](https://github.com/Kiricon/text-input-button/raw/master/screencatpure.gif)
 
 ## Setup
 
