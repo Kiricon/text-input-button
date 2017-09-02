@@ -1,7 +1,7 @@
 # text-input-button
 A HTML custom element implementing the `<text-input-button>` tag.
 
-[ Add a nice image here ]
+![text-input-button in action](https://github.com/Kiricon/text-input-button/raw/master/screencapture.gif)
 
 ## Setup
 
@@ -25,5 +25,19 @@ require("text-input-button");
 
 ## Usage
 ```HTML
-    <text-input-button></text-input-button>
+    <text-input-button placeholder="Search..." width="100%" button-width="100px">Search</text-input-button>
+```
+
+## Customization
+You can customize the color of the `text-input-button` by assigning values to css elements. 
+
+The two css elements that affect `text-input-button` are `--text-input-button-color` and `--secondary-color`.
+
+You can set there values like so
+
+```CSS
+    :root {
+        --text-input-button-color: red; /* if both are set --fun-tabs-color takes precedence */
+        --secondary-color: red; 
+    }
 ```
