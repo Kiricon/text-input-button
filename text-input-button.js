@@ -12,25 +12,17 @@ template.innerHTML = `
             margin: 0px;
         }
         input {
-            padding: 0.5em;
+            padding: 5px;
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
             font-size: 0.8em;
-            border: solid 1px #aaa;
+            border: solid 1px var(--text-input-button-color, var(--secondary-color, #3F51B5));
             display: block;
             float:left;
-            
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         }
         input:focus, button {
             outline: none;
-        }
-        div {
-            height: 2px;
-            width: 0px;
-            background-color: var( --fun-input-color ,var(--primary-color, #673AB7));
-            margin: 0px auto;
-            transition: ease width 0.3s;
-            z-index: 1;
         }
         input:focus + div {
             width: 100%;
@@ -40,7 +32,7 @@ template.innerHTML = `
             display: inline-block;
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
-            padding: 0.5em 1em;
+            padding: 5px 10px;
             cursor: pointer;
             transition: all ease 0.3s;
             opacity: 1;
@@ -49,16 +41,26 @@ template.innerHTML = `
              -ms-user-select: none; 
                  user-select: none;
             font-size: 0.8em;
-            border: solid 1px #aaa;
+            border: solid 1px var(--text-input-button-color, var(--secondary-color, #3F51B5));
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            background-color: var(--text-input-button-color, var(--secondary-color, #3F51B5));
+            color: white;
         }
-        
+
+        button:hover {
+            opacity: 0.7;
+        }
+
+        button:active {
+            box-shadow: none;
+        }
+
     </style>
     <input type="text" />
     <button>
         <slot>
         </slot>
     </button>
-    <div></div>
 `;
 
 /**
@@ -92,7 +94,10 @@ class TextInputButton extends HTMLElement {
      * cases.
      */
     connectedCallback() {
-        
+        const input = this.shadowRoot.querySelector('input');
+        const button = this.shadowRoot.querySelector('button');
+        const width = this.offsetWidth - button.offsetWidth - 20;
+        input.style.width = `${width}px`;
     }
 
     /**
