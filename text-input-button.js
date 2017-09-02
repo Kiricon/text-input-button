@@ -12,29 +12,34 @@ template.innerHTML = `
             margin: 0px;
         }
         input {
-            padding: 5px;
+            padding: 10px;
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
             font-size: 0.8em;
             border: solid 1px var(--text-input-button-color, var(--secondary-color, #3F51B5));
             display: block;
             float:left;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: ease all  0.3s;
         }
         input:focus, button {
             outline: none;
         }
-        input:focus + div {
-            width: 100%;
+        
+        input:focus, input:focus + button {
+            box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+        }
+
+        button:focus {
+            opacity: 0.8;
         }
 
         button {
             display: inline-block;
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
-            padding: 5px 10px;
+            padding: 10px 15px;
             cursor: pointer;
-            transition: all ease 0.3s;
+            transition: ease all 0.3s
             opacity: 1;
             -webkit-user-select: none;
             -moz-user-select: none; 
@@ -42,7 +47,6 @@ template.innerHTML = `
                  user-select: none;
             font-size: 0.8em;
             border: solid 1px var(--text-input-button-color, var(--secondary-color, #3F51B5));
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
             background-color: var(--text-input-button-color, var(--secondary-color, #3F51B5));
             color: white;
         }
