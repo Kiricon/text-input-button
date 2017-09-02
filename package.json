@@ -1,0 +1,29 @@
+{
+  "name": "text-input-button",
+  "version": "1.0.0",
+  "description": "A HTML custom element implementing the <text-input-button> tag",
+  "main": "text-input-button.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiricon/text-input-button.git"
+  },
+  "keywords": [
+    "custom",
+    "element",
+    "text-input-button",
+    "text",
+    "button",
+    "input",
+    "html",
+    "tag"
+  ],
+  "author": "Dominic Valenciana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kiricon/text-input-button/issues"
+  },
+  "homepage": "https://github.com/Kiricon/text-input-button#readme"
+}
