@@ -84,6 +84,9 @@ class TextInputButton extends HTMLElement {
         // create shadow root for any children context
         this.attachShadow({mode: "open"});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
+        let buttonWidth = this.getAttribute('button-width') || '50px';
+        let inputWidth = this.getAttribute('width') || '200px';
+        this.shadowRoot.querySelector('input').style.width = `calc(${inputWidth} - ${buttonWidth})`;
 
         // add any initial variables here
     }
@@ -94,10 +97,7 @@ class TextInputButton extends HTMLElement {
      * cases.
      */
     connectedCallback() {
-        const input = this.shadowRoot.querySelector('input');
-        const button = this.shadowRoot.querySelector('button');
-        const width = this.offsetWidth - button.offsetWidth - 20;
-        input.style.width = `${width}px`;
+        
     }
 
     /**
